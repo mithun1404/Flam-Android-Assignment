@@ -1,14 +1,10 @@
 # Flam-Android-Assignment
-!-- problem:start -->
-
 ## Description
 
 <!-- description:start -->
 
 <p>Design and implement a Least Recently Used (LRU) Cache. A cache has a fixed capacity, and when it exceeds that capacity, it must evict the least recently used item to make space for the new one.
 .</p>
-
-
 
 <p>The functions <code>get</code> and <code>put</code> must each run in <code>O(1)</code> average time complexity.</p>
 
@@ -42,7 +38,10 @@ lRUCache.get(4);    // return 4
 	<li><code>1 &lt;= capacity &lt;= 3000</code></li>
 	<li><code>0 &lt;= key &lt;= 10<sup>4</sup></code></li>
 	<li><code>0 &lt;= value &lt;= 10<sup>5</sup></code></li>
-	<li>At most <code>2 * 10<sup>5</sup></code> calls will be made to <code>get</code> and <code>put</code>.</li>
+	<li>Maximum number of operations <code>10<sup>5</sup></code> calls will be made to <code>get</code> and <code>put</code>.</li>
+	
+
+
 </ul>
 
 <!-- description:end -->
