@@ -1,6 +1,7 @@
 # Flam-Android-Assignment (SET - 1)
 ## QUESTION - 1
 
+
 <!-- description:start -->
 
 <p>Design and implement a Least Recently Used (LRU) Cache. A cache has a fixed capacity, and when it exceeds that capacity, it must evict the least recently used item to make space for the new one.
@@ -62,3 +63,51 @@ When accessing a node, if the node exists, we delete it from its original positi
 When inserting a node, if the node exists, we delete it from its original position and reinsert it at the head of the list. If it does not exist, we first check if the cache is full. If it is full, we delete the node at the tail of the list and insert the new node at the head of the list.
 
 The time complexity is $O(1)$, and the space complexity is $O(\textit{capacity})$.
+
+
+## QUESTION - 2
+You are required to implement a simplified version of a HashMap (also known as an unordered map or dictionary), **without using any built-in hash table libraries** such as `dict`, `map`, or `unordered_map`.
+
+Design a data structure that supports the following operations in **average-case O(1)** time:
+
+### Supported Operations
+
+- `put(key, value)`: Insert or update the value associated with a key.
+- `get(key)`: Retrieve the value for a given key. Return `-1` if the key doesn't exist.
+- `remove(key)`: Delete the key-value pair from the map.
+
+### Constraints
+
+- All keys and values are integers.
+- `0 <= key, value <= 10^6`
+- Up to `10^5` operations.
+- Keys are unique within the map.
+- Built-in hash table structures are **not allowed**.
+
+---
+
+## 💡 Approach
+
+We implement a **custom hash map** using:
+
+- A fixed-size list of buckets.
+- **Hash Function**: `key % number_of_buckets`.
+- **Separate Chaining**: Each bucket holds a list of `(key, value)` pairs.
+
+This design ensures average-case **O(1)** time complexity for `put`, `get`, and `remove` operations.
+
+---
+
+## 🧪 Example Usage
+
+```python
+obj = MyHashMap()
+obj.put(1, 10)       # inserts key 1 with value 10
+obj.put(2, 20)       # inserts key 2 with value 20
+print(obj.get(1))    # returns 10
+print(obj.get(3))    # returns -1 (not found)
+obj.put(2, 30)       # updates key 2 with new value 30
+print(obj.get(2))    # returns 30
+obj.remove(2)        # removes key 2
+print(obj.get(2))    # returns -1
+```
